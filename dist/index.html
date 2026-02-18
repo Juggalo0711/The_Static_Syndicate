@@ -6,7 +6,51 @@
     <title>Kryptic Static</title>
     <script type="module" crossorigin src="./assets/index-DLuLWQ-W.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-CmtM1RXX.css">
-  </head>
+    <style>
+  /* FLICKER EFFECT */
+  @keyframes textFlicker {
+    0% { opacity: 0.1; text-shadow: 0px 0px 20px rgba(255, 0, 0, 1); }
+    2% { opacity: 1; text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8); }
+    8% { opacity: 0.1; }
+    9% { opacity: 1; }
+    20% { opacity: 1; text-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5); }
+    100% { opacity: 1; text-shadow: 0px 0px 10px rgba(255, 0, 0, 1); }
+  }
+
+  .glitch-name {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3.5rem;
+    color: #ff3333;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    animation: textFlicker 3s linear infinite;
+    margin-top: 50px;
+  }
+
+  /* COLLAGE GRID */
+  .collage-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    background: #000;
+  }
+
+  .collage-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid #222;
+    filter: grayscale(100%) contrast(150%);
+  }
+
+  .collage-item img:hover {
+    filter: none;
+    border-color: #ff3333;
+  }
+</style>
+</head>
   <body>
     <div id="root"></div>
   </body>
